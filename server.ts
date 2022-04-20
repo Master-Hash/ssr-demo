@@ -1,4 +1,3 @@
-/** @jsxImportSource https://esm.sh/react */
 import { serve } from "https://deno.land/std/http/server.ts";
 import { render } from "./app/entry.server.tsx";
 

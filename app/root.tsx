@@ -3,6 +3,7 @@ import { Routes, Route, Outlet, Link } from "https://esm.sh/react-router-dom";
 import { Home } from "./routes/index.tsx";
 import { Dashboard } from "./routes/dashboard.tsx";
 import { About } from "./routes/about.tsx";
+import { Count } from "./routes/count.tsx";
 
 export function App() {
   return <>
@@ -11,6 +12,7 @@ export function App() {
         <Route index element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="dashboard" element={<Dashboard />} />
+        <Route path="count" element={<Count />} />
         <Route path="*" element={<NoMatch />} />
       </Route>
     </Routes>

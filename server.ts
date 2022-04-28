@@ -1,4 +1,4 @@
-import { serve } from "https://deno.land/std/http/server.ts";
+import { serve } from "std/http/server.ts";
 import { render } from "./app/entry.server.tsx";
 
 // 冷启动有亿点慢

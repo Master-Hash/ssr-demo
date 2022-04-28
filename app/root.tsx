@@ -1,5 +1,5 @@
-/** @jsxImportSource https://esm.sh/react */
-import { Routes, Route, Outlet, Link } from "https://esm.sh/react-router-dom";
+/** @jsxImportSource react */
+import { Routes, Route, Outlet, Link } from "react-router-dom";
 import { Home } from "./routes/index.tsx";
 import { Dashboard } from "./routes/dashboard.tsx";
 import { About } from "./routes/about.tsx";

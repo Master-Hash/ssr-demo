@@ -1,4 +1,4 @@
-/** @jsxImportSource https://esm.sh/react */
+/** @jsxImportSource react */
 export function Home() {
   return (
     <div>

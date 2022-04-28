@@ -1,0 +1,11 @@
+{
+  "imports": {
+    "std/": "https://deno.land/std/",
+    "react": "https://esm.sh/react",
+    "react/jsx-runtime": "https://esm.sh/react/jsx-runtime",
+    "react-dom/client": "https://esm.sh/react-dom/client",
+    "react-dom/server": "https://esm.sh/react-dom/server",
+    "react-router-dom": "https://esm.sh/react-router-dom",
+    "react-router-dom/server": "https://esm.sh/react-router-dom/server"
+  }
+}

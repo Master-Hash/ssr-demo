@@ -1,5 +1,5 @@
-/** @jsxImportSource https://esm.sh/react */
-import { useState } from "https://esm.sh/react";
+/** @jsxImportSource react */
+import { useState } from "react";
 
 
 export function Count() {

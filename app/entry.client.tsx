@@ -1,8 +1,8 @@
-/** @jsxImportSource https://esm.sh/react */
+/** @jsxImportSource react */
 /// <reference lib="DOM" />
-import { StrictMode } from "https://esm.sh/react";
-import { hydrateRoot } from "https://esm.sh/react-dom/client";
-import { BrowserRouter } from "https://esm.sh/react-router-dom";
+import { StrictMode } from "react";
+import { hydrateRoot } from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
 import { App } from "./root.tsx";
 
 const root = hydrateRoot(

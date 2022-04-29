@@ -24,9 +24,23 @@ function Layout() {
     <html lang="zh-cn">
       <head>
         <meta charSet="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>SSR Demo</title>
+        {/* <script type="importmap" src="/import_map.json" /> */}
+        <script type="importmap" dangerouslySetInnerHTML={{
+          __html: `{
+            "imports": {
+              "std/": "https://deno.land/std@0.136.0/",
+              "react": "https://esm.sh/react@18.1.0?dev",
+              "react/jsx-runtime": "https://esm.sh/react@18.1.0/jsx-runtime?dev",
+              "react-dom/client": "https://esm.sh/react-dom@18.1.0/client?dev",
+              "react-dom/server": "https://esm.sh/react-dom@18.1.0/server?dev",
+              "react-router-dom": "https://esm.sh/react-router-dom@6.3.0?deps=react@18.1.0&dev",
+              "react-router-dom/server": "https://esm.sh/react-router-dom@6.3.0/server?deps=react@18.1.0&dev"
+            }
+          }
+`}} />
       </head>
       <body>
         <header>

@@ -16,6 +16,19 @@ serve(async (req) => {
       headers: { "Content-Type": "text/javascript; charset=utf-8" },
     });
   }
+  else if (pathname === "/import_map.json") {
+    /**
+     * fetch 本地文件，免去处理句柄的烦恼\
+     * 不过话说，“返回”副作用这种 API 设计真的不好
+     * @see https://deno.com/blog/deploy-static-files
+     */
+    const p = new URL("./import_map.json", import.meta.url).href;
+    const importMap = await fetch(p);
+    const res = new Response(importMap.body, {
+      headers: { "Content-Type": "application/importmap+json; charset=utf-8" },
+    });
+    return res;
+  }
   else if (pathname === "/app/root.tsx") {
     return new Response(files["file:///C:/Users/90895/Desktop/ssr-demo/app/root.tsx.js"], {
       headers: { "Content-Type": "text/javascript; charset=utf-8" },

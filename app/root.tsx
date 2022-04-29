@@ -58,6 +58,9 @@ function Layout() {
               <li>
                 <Link to="/nothing-here">Nothing Here</Link>
               </li>
+              <li>
+                <Link to="/count">Count</Link>
+              </li>
             </ul>
           </nav>
         </header>

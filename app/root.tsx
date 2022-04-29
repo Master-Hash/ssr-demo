@@ -1,9 +1,12 @@
 /** @jsxImportSource react */
+import { lazy, Suspense } from "react";
 import { Routes, Route, Outlet, Link } from "react-router-dom";
 import { Home } from "./routes/index.tsx";
 import { Dashboard } from "./routes/dashboard.tsx";
 import { About } from "./routes/about.tsx";
 import { Count } from "./routes/count.tsx";
+
+const Lazy = lazy(() => import("./routes/lazy.tsx"));
 
 export function App() {
   return <>
@@ -13,6 +16,12 @@ export function App() {
         <Route path="about" element={<About />} />
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="count" element={<Count />} />
+        <Route path="lazy" element={
+          <Suspense fallback={<>...</>}>
+            {/* @ts-ignore ignore safely */}
+            <Lazy />
+          </Suspense>
+        } />
         <Route path="*" element={<NoMatch />} />
       </Route>
     </Routes>
@@ -60,6 +69,9 @@ function Layout() {
               </li>
               <li>
                 <Link to="/count">Count</Link>
+              </li>
+              <li>
+                <Link to="/lazy">Lazy</Link>
               </li>
             </ul>
           </nav>

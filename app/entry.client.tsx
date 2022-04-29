@@ -6,7 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 import { App } from "./root.tsx";
 
 const root = hydrateRoot(
-  document.querySelector("html")!,
+  document,
   <StrictMode>
     <BrowserRouter>
       <App />

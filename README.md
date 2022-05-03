@@ -11,22 +11,25 @@ $ deno task dev
 - React 18
 - React Router 6
 - Deno
+- Import Maps
 
-## 已知问题
+## 特性
 
-> Hydration failed because the initial UI does not match what was rendered on
-> the server.
-> ([Error 418](https://reactjs.org/docs/error-decoder.html/?invariant=418))
+我独立写完之后，看到 [Vue.js SSR 指南](https://staging-cn.vuejs.org/guide/scaling-up/ssr.html#basic-tutorial)，才知道我的方案没有特点……甚至 Import Maps 它都提到了……（虽然目的不同
 
-> There was an error while hydrating. Because the error happened outside of a
-> Suspense boundary, the entire root will switch to client rendering.
-> ([Error 423](https://reactjs.org/docs/error-decoder.html/?invariant=423))
+- 使用 `Deno.emit()` 编译 jsx，但马上这个 API 就要去世了[#14461](https://github.com/denoland/deno/issues/14461)
+- 未使用打包器，自然分割代码（符合我的直觉，但性能不堪重用
 
-经控制变量，
+## 优化空间
 
-- 不是 `hydrateRoot(e, c)` 首个参数的锅（`document` 和 `<html>` 都不对）
-- 不是 `renderToReadableStream(c)` 的锅，换成 `renderToString(c)` 一样不对
-- 不是 React Router 的锅，把 `./app/root.tsx` 换成普通的计数器依然不对
+- 以一种通用的方式管理路由、数据获取和状态存储。（Vue.js SSR 文档
+- 页面组件应可方便地修改页面元数据。
+
+## 杂谈
+
+SSR 真的比 SSG 难——SSG 既然不考虑编译性能，正规 `renderToString()`，DOM shim 乃至 Puppeteer 都可以用。
+
+只要有 sitemap（或者路由），可从 SSR 方便得到 SSG。（没有计划真的做出来）
 
 <!-- ## Fetch Router
 

@@ -11,7 +11,7 @@ export async function render(url: string) {
       <StaticRouter location={url}>
         <App />
       </StaticRouter>
-    </StrictMode>
+    </StrictMode>,
   );
   await stream.allReady;
   return new Response(stream, {

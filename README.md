@@ -15,9 +15,12 @@ $ deno task dev
 
 ## 特性
 
-我独立写完之后，看到 [Vue.js SSR 指南](https://staging-cn.vuejs.org/guide/scaling-up/ssr.html#basic-tutorial)，才知道我的方案没有特点……甚至 Import Maps 它都提到了……（虽然目的不同
+我独立写完之后，看到
+[Vue.js SSR 指南](https://staging-cn.vuejs.org/guide/scaling-up/ssr.html#basic-tutorial)，才知道我的方案没有特点……甚至
+Import Maps 它都提到了……（虽然目的不同
 
-- 使用 `Deno.emit()` 编译 jsx，但马上这个 API 就要去世了[#14461](https://github.com/denoland/deno/issues/14461)
+- 使用 `Deno.emit()` 编译 jsx，但马上这个 API
+  就要去世了[#14461](https://github.com/denoland/deno/issues/14461)
 - 未使用打包器，自然分割代码（符合我的直觉，但性能不堪重用
 
 ## 优化空间

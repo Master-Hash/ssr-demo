@@ -11,5 +11,5 @@ const root = hydrateRoot(
     <BrowserRouter>
       <App />
     </BrowserRouter>
-  </StrictMode>
+  </StrictMode>,
 );

@@ -20,8 +20,7 @@ serve(async (req) => {
     return new Response(files[`${getFileUrl("./app/entry.client.tsx")}.js`], {
       headers: { "Content-Type": "text/javascript; charset=utf-8" },
     });
-  }
-  else if (pathname === "/import_map.json") {
+  } else if (pathname === "/import_map.json") {
     /**
      * fetch 本地文件，免去处理句柄的烦恼\
      * 不过话说，“返回”副作用这种 API 设计真的不好
@@ -33,17 +32,13 @@ serve(async (req) => {
       headers: { "Content-Type": "application/importmap+json; charset=utf-8" },
     });
     return res;
-  }
-  else if (pathname === "/app/root.tsx") {
+  } else if (pathname === "/app/root.tsx") {
     return new Response(files[`${getFileUrl("./app/root.tsx")}.js`], {
       headers: { "Content-Type": "text/javascript; charset=utf-8" },
     });
-  }
-  else if (routePath.test(url)) {
+  } else if (routePath.test(url)) {
     return new Response(files[`${getFileUrl(`.${pathname}`)}.js`], {
       headers: { "Content-Type": "text/javascript; charset=utf-8" },
     });
-  }
-  else { return await render(pathname); }
+  } else return await render(pathname);
 });
-
